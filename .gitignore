@@ -1,3 +1,6 @@
 train/*
 test/*
 .vscode
+/Pipfile
+/Pipfile.lock
+.DS_Store
