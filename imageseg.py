@@ -7,7 +7,7 @@ from keras_preprocessing.image import img_to_array
 class ImageLoader:
 
     def load_image(self, filename, mask=False, dir='train'):
-        """Load in an image
+        """Load in an image of the given filename
         """
         if dir == 'train':
             img = Image.open(f"train/{filename}")
@@ -18,7 +18,7 @@ class ImageLoader:
         return img
 
     def load_mask(self, filename):
-        """Generate instance masks for shapes of the given image ID.
+        """Load masks of the given filename.
         """
         return self.load_image(filename, mask=True)
 
