@@ -2,11 +2,11 @@ import os
 import pandas as pd
 import numpy as np
 from PIL import Image
-from keras_preprocessing.image import img_to_array 
+from mrcnn import utils
 
-class ImageLoader:
+class ImageLoader(utils.Dataset):
 
-    def load_image(self, filename, mask=False, dir='train'):
+    def load_image(self, filename):
         """Load in an image of the given filename
         """
         if dir == 'train':
@@ -20,7 +20,7 @@ class ImageLoader:
     def load_mask(self, filename):
         """Load masks of the given filename.
         """
-        return self.load_image(filename, mask=True)
+        return self.load_image(filename)
 
 img_loader = ImageLoader()
 image = img_loader.load_image('1.png')
